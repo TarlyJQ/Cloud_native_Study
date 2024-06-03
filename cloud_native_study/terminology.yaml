@@ -1,0 +1,93 @@
+terminology:
+  - 12-factor apps:
+    - Codebase:
+      基准代码
+      One codebase tracked in version control, many deploys (一份基准代码，多份部署)
+    - Dependencies:
+      依赖
+      Explicitly declare and isolate dependencies (明确声明并隔离依赖)
+    - Config:
+      配置
+      Store config in the environment (在环境中存储配置)
+    - Backing services:
+      后端服务
+      Treat backing services as attached resources (将后端服务视为附着资源)
+    - Build, release, run:
+      构建，发布，运行
+      Strictly separate build and run stages (严格分离构建和运行阶段)
+    - Processes:
+      进程
+      Execute the app as one or more stateless processes (将应用程序作为一个或多个无状态进程执行)
+    - Port binding:
+      端口绑定
+      Export services via port binding (通过端口绑定导出服务)
+    - Concurrency:
+      并发
+      Scale out via the process model (通过进程模型扩展)
+    - Disposability:
+      可丢弃性
+      Maximize robustness with fast startup and graceful shutdown (通过快速启动和优雅关闭最大化健壮性)
+    - Dev/prod parity:
+      开发/生产一致性
+      Keep development, staging, and production as similar as possible (保持开发、暂存和生产尽可能相似)
+    - Logs:
+      日志
+      Treat logs as event streams (将日志视为事件流)
+    - Admin processes:
+      管理进程
+      Run admin/management tasks as one or more dedicated processes (将管理/管理任务作为一个或多个专用进程运行)
+  - Blue/Green Deployments:
+    蓝绿部署
+    运行两个相同的盛传环境的实践，目的是最大程度地减少停机时间和风险，一个在如何时间都在运行（例如，‘蓝色‘环境），而另一个（例如，’绿色‘环境）处于空闲状态，可以对空闲（绿色）环境做更改，然后将生产负载切换到该环境，这样可以最大程度地减少停机时间。如果在新的（绿色）环境出现问题，可以立即将负载切换回蓝色环境，从而将风险降到最低。当绿色环境运行稳定时，此时绿色环境为新的蓝色环境。
+  - Buildpacks:
+    构建包
+  - Cloud Application Platform:
+    云应用平台
+  - Cloud native:
+    云原生
+    Cloud native is an approach to building and running applications that is designed to run in the cloud, take advantage of the cloud for scaling, and use the cloud as a platform for infrastructure and operating systems.
+  - Cloud Provider Interface:
+    云服务提供商接口
+  - Container:
+    容器
+    A container is a standard unit of software that packages up code and all the dependencies so the application runs quickly and reliably from one computing environment to another.
+  - Continuous Intergration/Continuous Delivery(CI/CD):
+    持续集成、持续交付
+    通过自动化链路，实现CI/CD 流程
+  - DevOps:
+    运维开发
+  - Digital Transformation:
+    数字化转型
+    重点关注软件，数据流和用户体验，而不是有形的 IT 资产
+  - Distributer System:
+    分布式系统
+    通过网络连接的运行同一个服务的大量服务器集群
+  - Iaas:
+    基础设施即服务
+    提供基础设施，如计算资源、存储、网络等，用户无需维护基础计费资源。
+  - Paas:
+    平台即服务
+    提供好平台，用户无需自行搭建相关平台环境，直接使用即可，比如，阿里云的日志服务、高可用数据库服务
+  - SaaS:
+    软件即服务
+    提供软件，用户无需自行搭建相关软件环境，直接使用即可，比如，阿里云的钉钉、企业邮箱等
+  - Faas:
+    函数及服务
+    通过网络调用，提供服务，无需自行搭建相关服务环境，直接使用即可，比如，阿里云的函数计算服务
+  - Caas:
+    容器及服务
+    提供容器，提供服务，无需自行搭建相关容器环境，直接使用即可，比如，阿里云的容器服务
+  - Microservices:
+    微服务
+    在容器内交付的服务，他们应可以独立部署，并且通常在应用冲虚或体系结构中互相松散耦合。
+  - Private Cloud:
+    私有云
+    私有云是企业内部部署的云服务，通常由企业自己搭建，比如，阿里云的阿里云、腾讯云的腾讯云等
+  - Public Cloud:
+    公有云
+    公有云是企业外部部署的云服务，通常由云服务提供商搭建，比如，阿里云的阿里云、腾讯云的腾讯云等
+  - Hybrid Cloud:
+    混合云
+    混合云是企业内部和外部部署的云服务，通常由企业自己搭建一部分，由云服务提供商搭建一部分，比如，阿里云的阿里云、腾讯云的腾讯云等
+  - 
+

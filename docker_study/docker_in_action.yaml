@@ -1,0 +1,53 @@
+基本概念:
+  - Docker架构
+  - Docker隔离原理:
+    - namespace 6项资源隔离:
+      - UTS: 
+        系统调用参数: CLONE_NEWUTS
+        隔离内容: 主机名和域名
+      - Mount: 
+        系统调用参数: CLONE_NEWNS
+        隔离内容: 挂载点
+      - PID: 
+        系统调用参数: CLONE_NEWPID
+        隔离内容: 进程ID
+      - Network: 
+        系统调用参数: CLONE_NEWNET
+        隔离内容: 网络设备、网络栈、端口等
+      - User: 
+        系统调用参数: CLONE_NEWUSER
+        隔离内容: 用户和用户组
+      - IPC: 
+        系统调用参数: CLONE_NEWIPC
+        隔离内容: 信号量、消息队列和共享内存
+    - cgroup 资源限制:
+      - 主要功能:
+        资源限制: 限制任务使用的资源总额，并在超哥这个配额时发出提示
+        优先级分配: 分配CPU时间片数量及磁盘IO带宽大小、控制任务运行的优先级
+        资源统计: 统计系统资源使用量、如CPU使用时长、内存用量等
+      - Cgroup资源控制系统:
+        - 子系统:
+          cpu: 使用调度程序控制任务对CPU的使用
+          cpuacct(CPU Accounting): 自动生成cgroup中任务对CPU资源使用情况的报告
+          cpuset: 为cgrou中的任务分配独立的CPU(多处理器系统时)和内存
+          devices: 开启或关闭 cgroup 中任务对设备的访问
+          freezer: 挂起或恢复 cgroup 中的任务
+          memory: 设定cgroup 中任务对内存使用量的限定，并生成这些任务使用内存的报告
+          perf_event(Linux CPU 性能探测器): 使cgroup中的任务可以进行统一的性能测试
+          net_cls(Docker 未使用): 通过登记识别符标记网络数据包，从而允许 Linux 流量监控
+  - Docker安装(CentOS 7):
+    - 移除旧版本Docker: 
+      yum remove docker*
+    - 安装以来包: 
+      yum install -y yum-utils device-mapper-persistent-data lvm2
+    - 添加软件源信息: 
+      yum-config-manager --add-repo https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
+      sed -i 's+download.docker.com+mirrors.aliyun.com/docker-ce+' /etc/yum.repos.d/docker-ce.repo
+      yum makecache
+    - 安装最新版Docker-CE: 
+      yum -y install docker-ce docker-ce-cli containerd.io
+      - 查找Docker-CE的版本:
+        yum list docker-ce.x86_64 --showduplicates | sort -r
+        - 安装指定版本:
+          yum -y install docker-ce-[VERSION] docker-ce-cli-[VERSION] containerd.io
+
